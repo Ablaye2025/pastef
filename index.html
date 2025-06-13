@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>À propos - MonSite</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      padding-top: 20px;
+    }
+
+    .navbar {
+      z-index: 1000;
+    }
+
+    .logo-navbar {
+      height: 1.6rem;
+      width: auto;
+    }
+
+    .texte-pastef {
+      font-weight: bold;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+    }
+
+    .texte-pastef .vert {
+      color: #0f7d3e;
+    }
+
+    .texte-pastef .rouge {
+      color: red;
+    }
+
+    .texte-pastef .blanc {
+      color: #ffffff;
+    }
+
+    .carousel-item {
+      height: 100vh;
+      position: relative;
+    }
+
+    .carousel-item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-caption {
+      top: 50%;
+      transform: translateY(-50%);
+      bottom: auto;
+    }
+
+    .carousel-caption h1 {
+      background-color: rgba(0, 0, 0, 0.6);
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 2rem;
+      color: white;
+    }
+
+    .marquee-container {
+      overflow: hidden;
+      background: red;
+      padding: 30px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      position: relative;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      animation: marquee 15s linear infinite;
+      font-weight: bold;
+      color: white;
+      font-size: 1.5rem;
+      white-space: nowrap;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="logo.jpg" alt="Logo Pastef" class="logo-navbar me-2">
+      <span class="texte-pastef">
+        <span class="vert">Pastéf</span><span class="text-white"> - </span><span class="rouge">Commune</span><span class="text-white"> - </span><span class="blanc">Keur Manongo</span>
+      </span>
+    </a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">À propos</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Portfolio
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="portfolio-videos.html">Mes Vidéos</a></li>
+            <li><a class="dropdown-item" href="portfolio-photos.html">Mes Photos</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="actualitesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Actualités
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="actualites.html">Toutes les actualités</a></li>
+            <li><a class="dropdown-item" href="reunions.html">Réunions</a></li>
+            <li><a class="dropdown-item" href="organigrammes.html">Organigrammes</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Texte défilant -->
+<div class="marquee-container">
+  <span class="marquee-text">BIENVENUE DANS PASTEF COMMUNE KEUR MANOGO</span>
+</div>
+
+<!-- Carrousel pleine page -->
+<section class="m-0 p-0">
+  <div id="carouselActivites" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="diom1.jpg" alt="Activité 1">
+      </div>
+      <div class="carousel-item">
+        <img src="diom6.jpg" alt="Activité 2">
+      </div>
+      <div class="carousel-item">
+        <img src="diomaye.jpg" alt="Activité 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselActivites" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Précédent</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselActivites" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Suivant</span>
+    </button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center text-white bg-dark py-3">
+  <div class="container">&copy; 2025 MonSite. Tous droits réservés.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
