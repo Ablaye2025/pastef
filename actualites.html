@@ -12,14 +12,13 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
 
   <!-- Style perso -->
-  <link href="style.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet">
 
   <style>
     .card-img-top {
+      object-fit: cover;
       width: 100%;
-      height: 350px;
-      object-fit: contain;
-      background-color: #f8f9fa;
+      height: 250px;
     }
     .card {
       cursor: default;
@@ -32,6 +31,7 @@
       padding-top: 70px;
       background-color: antiquewhite;
     }
+    /* Optionnel : style bouton lire plus */
     .btn-link {
       cursor: pointer;
       font-weight: 600;
@@ -121,7 +121,7 @@
       date: "2025-06-05",
       categorie: "evenement",
       image: "am1.jpg",
-      description: "Le 5 juin 2025, la section communale de PASTEF a organisé une rencontre citoyenne à Keur Manogo...",
+      description: "Le 5 juin 2025, la section communale de PASTEF a organisé une rencontre citoyenne à Keur Manogo. Cet événement a permis un échange direct entre les représentants du parti et les habitants, autour des enjeux majeurs qui touchent la communauté. Objectif : identifier les priorités de développement local en donnant la parole aux citoyens, dans une démarche participative et transparente. Cette initiative s’inscrit dans la volonté du mouvement de bâtir une gouvernance locale plus inclusive, centrée sur les réalités du terrain et les aspirations des populations.",
       lien: "#"
     },
     {
@@ -130,7 +130,7 @@
       date: "2025-05-15",
       categorie: "projet",
       image: "rakhmane.jpg",
-      description: "Un projet d’assainissement a été lancé avec la participation active de la jeunesse locale...",
+      description: "Un projet d’assainissement a été lancé avec la participation active de la jeunesse locale. L’objectif est de nettoyer les caniveaux, améliorer l’évacuation des eaux usées, réduire les risques d’inondation et sensibiliser la population sur les gestes écologiques et citoyens. Ce programme comprend des opérations régulières de curage, la mise en place de points de collecte des déchets, ainsi que des séances de formation et de sensibilisation dans les écoles, les quartiers et les lieux publics. Il s’inscrit dans une démarche durable visant à renforcer la résilience de la commune face aux changements climatiques, à améliorer le cadre de vie et à encourager l’implication des jeunes dans le développement local.",
       lien: "#"
     },
     {
@@ -138,8 +138,8 @@
       titre: "Annonce importante sur la santé locale",
       date: "2024-12-10",
       categorie: "annonce",
-      image: "gu.jpg",
-      description: "Cette initiative vise à améliorer le niveau scolaire des élèves du primaire et du secondaire dans la commune...",
+      image: "mak1.jpg",
+      description: "Cette campagne vise à renforcer la couverture vaccinale de la population, en particulier des groupes les plus vulnérables : enfants, personnes âgées, femmes enceintes, mais aussi les jeunes et adultes non encore vaccinés. Les vaccins proposés couvrent plusieurs maladies graves et évitables, notamment : tétanos, rougeole, poliomyélite, hépatite B, tuberculose (BCG) et fièvre jaune. Des équipes mobiles seront déployées dans les quartiers, villages et centres de santé pour faciliter l’accès aux vaccins. Des séances d’information seront également organisées pour répondre aux questions et lutter contre les idées reçues.",
       lien: "#"
     },
     {
@@ -147,8 +147,8 @@
       titre: "Fête annuelle des jeunes",
       date: "2023-08-20",
       categorie: "evenement",
-      image: "jeu.jpg",
-      description: "Une grande fête sera organisée pour célébrer la jeunesse locale...",
+      image: "fall.png",
+      description: "Une grande fête sera organisée pour célébrer la jeunesse locale. Au programme : concerts, compétitions sportives, animations culturelles et échanges sur le rôle des jeunes dans le développement de la commune.",
       lien: "#"
     },
   ];
@@ -208,7 +208,7 @@
             desc.textContent = item.description;
             btn.textContent = "Lire Moins";
           } else {
-            desc.textContent = truncateText(item.description, 120);
+            desc.textContent = truncateText(item.description, 150);
             btn.textContent = "Lire Plus";
           }
         });
