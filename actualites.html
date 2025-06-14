@@ -31,6 +31,11 @@
       padding-top: 70px;
       background-color: antiquewhite;
     }
+    /* Optionnel : style bouton lire plus */
+    .btn-link {
+      cursor: pointer;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -152,6 +157,11 @@
   const filterYear = document.getElementById("filterYear");
   const filterCategory = document.getElementById("filterCategory");
 
+  function truncateText(text, maxLength = 150) {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength) + '...';
+  }
+
   function afficherActualites() {
     const year = filterYear.value;
     const category = filterCategory.value;
@@ -168,20 +178,42 @@
       return;
     }
 
-    newsContainer.innerHTML = filteredNews.map(item => `
-      <div class="col-md-6">
-        <div class="card h-100 shadow-sm">
-          <a href="${item.image}" data-lightbox="news-gallery" data-title="${item.titre}">
-            <img src="${item.image}" class="card-img-top" alt="${item.titre}" onerror="this.src='https://via.placeholder.com/400x250?text=Image+non+disponible';">
-          </a>
-          <div class="card-body">
-            <h5 class="card-title">${item.titre}</h5>
-            <small class="text-muted">${new Date(item.date).toLocaleDateString('fr-FR')}</small>
-            <p class="card-text mt-2">${item.description}</p>
+    newsContainer.innerHTML = filteredNews.map(item => {
+      const isLong = item.description.length > 150;
+      const shortDescription = truncateText(item.description, 150);
+
+      return `
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <a href="${item.image}" data-lightbox="news-gallery" data-title="${item.titre}">
+              <img src="${item.image}" class="card-img-top" alt="${item.titre}" onerror="this.src='https://via.placeholder.com/400x250?text=Image+non+disponible';">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">${item.titre}</h5>
+              <small class="text-muted">${new Date(item.date).toLocaleDateString('fr-FR')}</small>
+              <p class="card-text mt-2" id="desc-${item.id}">${shortDescription}</p>
+              ${isLong ? `<button class="btn btn-link p-0" data-id="${item.id}" id="btn-${item.id}">Lire Plus</button>` : ''}
+            </div>
           </div>
         </div>
-      </div>
-    `).join("");
+      `;
+    }).join("");
+
+    filteredNews.forEach(item => {
+      if (item.description.length > 150) {
+        const btn = document.getElementById(`btn-${item.id}`);
+        const desc = document.getElementById(`desc-${item.id}`);
+        btn.addEventListener("click", () => {
+          if (btn.textContent === "Lire Plus") {
+            desc.textContent = item.description;
+            btn.textContent = "Lire Moins";
+          } else {
+            desc.textContent = truncateText(item.description, 150);
+            btn.textContent = "Lire Plus";
+          }
+        });
+      }
+    });
   }
 
   filterYear.addEventListener("change", afficherActualites);
