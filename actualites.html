@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Actualités filtrables - MonSite</title>
-  
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  
+
   <!-- Lightbox2 -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
-  
+
   <!-- Style perso -->
   <link href="style.css" rel="stylesheet">
 
@@ -116,10 +116,8 @@
       date: "2025-06-05",
       categorie: "evenement",
       image: "am1.jpg",
-      description: "Le 5 juin 2025, la section communale de PASTEF a organisé une rencontre citoyenne à Keur Manogo. Cet événement a permis un échange direct entre les représentants du parti et les habitants,
- autour des enjeux majeurs qui touchent la communauté. Objectif : identifier les priorités de développement local en donnant la parole aux citoyens, dans une démarche participative et transparente.
-Cette initiative s’inscrit dans la volonté du mouvement de bâtir une gouvernance locale plus inclusive, centrée sur les réalités du terrain et les aspirations des populations.
-     
+      description: "Le 5 juin 2025, la section communale de PASTEF a organisé une rencontre citoyenne à Keur Manogo. Cet événement a permis un échange direct entre les représentants du parti et les habitants, autour des enjeux majeurs qui touchent la communauté. Objectif : identifier les priorités de développement local en donnant la parole aux citoyens, dans une démarche participative et transparente. Cette initiative s’inscrit dans la volonté du mouvement de bâtir une gouvernance locale plus inclusive, centrée sur les réalités du terrain et les aspirations des populations.",
+      lien: "#"
     },
     {
       id: 2,
@@ -127,11 +125,7 @@ Cette initiative s’inscrit dans la volonté du mouvement de bâtir une gouvern
       date: "2025-05-15",
       categorie: "projet",
       image: "rakhmane.jpg",
-      description: "Un projet d’assainissement a été lancé avec la participation active de la jeunesse locale. L’objectif est de nettoyer les caniveaux, améliorer l’évacuation des eaux usées, réduire les risques d’inondation et sensibiliser la population sur les gestes écologiques et citoyens.
-
-Ce programme comprend des opérations régulières de curage, la mise en place de points de collecte des déchets, ainsi que des séances de formation et de sensibilisation dans les écoles, les quartiers et les lieux publics.
-
-Il s’inscrit dans une démarche durable visant à renforcer la résilience de la commune face aux changements climatiques, à améliorer le cadre de vie et à encourager l’implication des jeunes dans le développement local. Ce projet marque une nouvelle étape dans l'engagement communautaire de la commune, avec un fort appui des autorités locales et des partenaires techniques.
+      description: "Un projet d’assainissement a été lancé avec la participation active de la jeunesse locale. L’objectif est de nettoyer les caniveaux, améliorer l’évacuation des eaux usées, réduire les risques d’inondation et sensibiliser la population sur les gestes écologiques et citoyens. Ce programme comprend des opérations régulières de curage, la mise en place de points de collecte des déchets, ainsi que des séances de formation et de sensibilisation dans les écoles, les quartiers et les lieux publics. Il s’inscrit dans une démarche durable visant à renforcer la résilience de la commune face aux changements climatiques, à améliorer le cadre de vie et à encourager l’implication des jeunes dans le développement local.",
       lien: "#"
     },
     {
@@ -140,19 +134,7 @@ Il s’inscrit dans une démarche durable visant à renforcer la résilience de 
       date: "2024-12-10",
       categorie: "annonce",
       image: "mak1.jpg",
-      description: "Cette campagne vise à renforcer la couverture vaccinale de la population, en particulier des groupes les plus vulnérables : enfants, personnes âgées, femmes enceintes, mais aussi les jeunes et adultes non encore vaccinés.
-
-Les vaccins proposés couvrent plusieurs maladies graves et évitables, notamment :
-✅ Le tétanos
-✅ La rougeole
-✅ La poliomyélite
-✅ L'hépatite B
-✅ La tuberculose (BCG)
-✅ La fièvre jaune
-
-Des équipes mobiles seront déployées dans les quartiers, villages et centres de santé pour faciliter l’accès aux vaccins. Des séances d’information seront également organisées pour répondre aux questions et lutter contre les idées reçues.
-
-L’objectif est de garantir une santé préventive efficace et accessible pour tous, réduire les risques d’épidémie, et promouvoir une culture de la vaccination dans toute la commune. Cette initiative est menée en collaboration avec les autorités sanitaires, les associations locales et les partenaires internationaux.
+      description: "Cette campagne vise à renforcer la couverture vaccinale de la population, en particulier des groupes les plus vulnérables : enfants, personnes âgées, femmes enceintes, mais aussi les jeunes et adultes non encore vaccinés. Les vaccins proposés couvrent plusieurs maladies graves et évitables, notamment : tétanos, rougeole, poliomyélite, hépatite B, tuberculose (BCG) et fièvre jaune. Des équipes mobiles seront déployées dans les quartiers, villages et centres de santé pour faciliter l’accès aux vaccins. Des séances d’information seront également organisées pour répondre aux questions et lutter contre les idées reçues.",
       lien: "#"
     },
     {
@@ -190,7 +172,7 @@ L’objectif est de garantir une santé préventive efficace et accessible pour 
       <div class="col-md-6">
         <div class="card h-100 shadow-sm">
           <a href="${item.image}" data-lightbox="news-gallery" data-title="${item.titre}">
-            <img src="${item.image}" class="card-img-top" alt="${item.titre}">
+            <img src="${item.image}" class="card-img-top" alt="${item.titre}" onerror="this.src='https://via.placeholder.com/400x250?text=Image+non+disponible';">
           </a>
           <div class="card-body">
             <h5 class="card-title">${item.titre}</h5>
